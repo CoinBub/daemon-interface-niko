@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "$(whoami),$1" | nc ${TREASURY_HOST:-treasury} ${TREASURY_PORT:-30001}

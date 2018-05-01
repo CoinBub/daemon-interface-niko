@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>tech.coinbub</groupId>
+        <artifactId>daemon-parent</artifactId>
+        <version>1.0.3</version>
+    </parent>
+    <artifactId>daemon-interface-niko</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Daemon :: Niko</name>
+    <description>Niko RPC interface</description>
+    <url>https://github.com/CoinBub/daemon-niko</url>
+
+    <scm>
+        <connection>scm:git:git://github.com/CoinBub/daemon-niko.git</connection>
+        <developerConnection>scm:git:ssh://github.com:CoinBub/daemon-niko.git</developerConnection>
+        <url>http://github.com/CoinBub/daemon-niko/tree/master</url>
+    </scm>
+</project>

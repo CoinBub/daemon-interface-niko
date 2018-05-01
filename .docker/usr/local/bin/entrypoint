@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cat "$conf" |
+    USER=$(whoami) \
+    PASSWORD=$( pwgen 64 1 ) \
+    envsubst | tee "$conf"
+
+exec "$@"
