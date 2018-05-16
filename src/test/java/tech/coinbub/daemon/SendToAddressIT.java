@@ -19,7 +19,7 @@ import static tech.coinbub.daemon.testutils.BeanPropertyMatcher.property;
 import tech.coinbub.daemon.testutils.Dockerized;
 
 @ExtendWith(Dockerized.class)
-public class TestSendToAddress {
+public class SendToAddressIT {
     @Test
     public void throwsErrorOnInvalidAddress(final Niko niko) {
         final JsonRpcClientException ex = Assertions.assertThrows(JsonRpcClientException.class, () -> {

@@ -21,7 +21,7 @@ import static tech.coinbub.daemon.testutils.BeanPropertyMatcher.property;
 import tech.coinbub.daemon.testutils.Dockerized;
 
 @ExtendWith(Dockerized.class)
-public class TestGetTransaction {
+public class GetTransactionIT {
     @Test
     public void canGetTransaction(final Niko niko) {
         final Transaction tx = niko.gettransaction("b237ae95d8cf3c0af24948248fbafe447512826f85cf9c3288f9c83634b7fa9a");
