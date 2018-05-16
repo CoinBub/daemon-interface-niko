@@ -92,6 +92,12 @@ public interface Niko {
     String getbestblockhash();
 
     /**
+     * getblockhash <index>
+     * Returns hash of block in best-block-chain at <index>.
+     */
+    String getblockhash(Long index);
+
+    /**
      * `getblock <hash> [txinfo]`
      * 
      * Returns details of a block with given block-hash.
