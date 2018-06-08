@@ -20,6 +20,7 @@ import tech.coinbub.daemon.testutils.Dockerized;
 
 @ExtendWith(Dockerized.class)
 public class SendToAddressIT {
+    public static final String VALID_ADDRESS = "mhhhbW3S4XqYiJSzW2kx6krxYSm2JhGRqd";
     @Test
     public void throwsErrorOnInvalidAddress(final Niko niko) {
         final JsonRpcClientException ex = Assertions.assertThrows(JsonRpcClientException.class, () -> {
@@ -30,14 +31,14 @@ public class SendToAddressIT {
 
     @Test
     public void supportsNoComments(final Niko niko) {
-        final String txid = niko.sendtoaddress("mhhhbW3S4XqYiJSzW2kx6krxYSm2JhGRqd", BigDecimal.ONE);
+        final String txid = niko.sendtoaddress(VALID_ADDRESS, BigDecimal.ONE);
         final Transaction tx = niko.gettransaction(txid);
         assertThat(tx.amount, is(equalTo(new BigDecimal("-1.0"))));
     }
 
     @Test
     public void supportsSourceComment(final Niko niko) {
-        final String txid = niko.sendtoaddress("mhhhbW3S4XqYiJSzW2kx6krxYSm2JhGRqd", BigDecimal.ONE, "test transaction!");
+        final String txid = niko.sendtoaddress(VALID_ADDRESS, BigDecimal.ONE, "test transaction!");
         final Transaction tx = niko.gettransaction(txid);
         assertThat(tx, hasOnly(
                 property("txid", not(isEmptyString())),
@@ -57,7 +58,7 @@ public class SendToAddressIT {
         final TransactionDetail detail = tx.details.get(0);
         assertThat(detail, hasOnly(
                 property("account", isEmptyString()),
-                property("address", is(equalTo("mhhhbW3S4XqYiJSzW2kx6krxYSm2JhGRqd"))),
+                property("address", is(equalTo(VALID_ADDRESS))),
                 property("category", is(equalTo(TransactionDetail.Category.send))),
                 property("amount", is(equalTo(new BigDecimal("-1.0")))),
                 property("fee", is(equalTo(new BigDecimal("-0.00010"))))
@@ -66,7 +67,7 @@ public class SendToAddressIT {
 
     @Test
     public void supportsDestinationComment(final Niko niko) {
-        final String txid = niko.sendtoaddress("mhhhbW3S4XqYiJSzW2kx6krxYSm2JhGRqd", BigDecimal.ONE, "test transaction!", "receiving test!");
+        final String txid = niko.sendtoaddress(VALID_ADDRESS, BigDecimal.ONE, "test transaction!", "receiving test!");
         final Transaction tx = niko.gettransaction(txid);
         assertThat(tx, hasOnly(
                 property("txid", not(isEmptyString())),
@@ -87,7 +88,7 @@ public class SendToAddressIT {
         final TransactionDetail detail = tx.details.get(0);
         assertThat(detail, hasOnly(
                 property("account", isEmptyString()),
-                property("address", is(equalTo("mhhhbW3S4XqYiJSzW2kx6krxYSm2JhGRqd"))),
+                property("address", is(equalTo(VALID_ADDRESS))),
                 property("category", is(equalTo(TransactionDetail.Category.send))),
                 property("amount", is(equalTo(new BigDecimal("-1.0")))),
                 property("fee", is(equalTo(new BigDecimal("-0.00010"))))
