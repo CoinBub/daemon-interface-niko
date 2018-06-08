@@ -1,7 +1,5 @@
 language: java
 jdk:
-  - oraclejdk8
-  - oraclejdk9
   - openjdk8
 sudo: required
 services:
@@ -12,7 +10,17 @@ cache:
     - $HOME/.m2/
 
 before_install:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
+install:
   - docker pull coinbub/niko-daemon
+  - mvn dependency:go-offline
 
 script:
-  - mvn test jacoco:report coveralls:report -B -DcontainerLocation=localhost:10001
+  - mvn test jacoco:report -B
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
