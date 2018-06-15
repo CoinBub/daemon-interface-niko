@@ -12,6 +12,7 @@ public class TransactionDetail {
     public BigDecimal fee;
 
     public enum Category {
+        generate,
         immature,
         send,
         receive

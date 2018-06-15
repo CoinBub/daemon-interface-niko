@@ -94,5 +94,11 @@ public class GetBlockIT {
         ));
         assertThat(key.addresses.get(0), is(equalTo("mtNiPdupyDA7LfG9Mbwx3qXweoiZKSsTtY")));
     }
+
+    @Test
+    public void supportsNextBlockHash(final Niko niko) {
+        final Block block = niko.getblock(niko.getblockhash(1L));
+        assertThat(block.nextblockhash, is(equalTo("48ca28f7a3d24f383b2b287ac3e603a27a9bb40e89a53485d177234e74667a3f")));
+    }
     
 }

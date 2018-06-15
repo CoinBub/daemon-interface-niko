@@ -25,6 +25,7 @@ public class Block {
     public String blocktrust;
     public String chaintrust;
     public String previousblockhash;
+    public String nextblockhash;
     public String flags;
     public String proofhash;
     public Long entropybit;
