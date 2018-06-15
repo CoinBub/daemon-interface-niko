@@ -36,6 +36,7 @@ COPY .docker /
 RUN apt-get -y update \
  && apt-get -y install \
         gettext \
+        iproute2 \
         libboost-filesystem-dev \
         libboost-program-options-dev \
         libboost-system-dev \
