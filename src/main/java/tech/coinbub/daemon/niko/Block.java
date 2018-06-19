@@ -32,6 +32,9 @@ public class Block {
     public String modifier;
     public String modifierv2;
     public List<Transaction> tx;
+    // XXX Thus far, `signature` has only shown up in block e2fcfcd8e73c13b7c5981c7040ca679f488360161d0c7de724850aad954bd3fb
+    // I have no idea how to replicate it at this time.
+    public String signature;
 }
 
 //niko@test:~$ nikod getblock 37762e5ce945ff724d96623cc94a5983f1ba9322224a5ac68d3d8e899615373d
