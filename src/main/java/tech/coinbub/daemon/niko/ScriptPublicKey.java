@@ -12,6 +12,8 @@ public class ScriptPublicKey {
     public List<String> addresses;
     
     public enum Type {
-        pubkeyhash
+        pubkey,
+        pubkeyhash,
+        nonstandard
     }
 }
