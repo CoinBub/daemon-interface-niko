@@ -24,7 +24,7 @@
         <dependency>
             <groupId>tech.coinbub</groupId>
             <artifactId>daemon-utils</artifactId>
-            <version>1.1.0</version>
+            <version>1.2.0</version>
         </dependency>
         <dependency>
             <groupId>tech.coinbub</groupId>
