@@ -10,6 +10,11 @@ import tech.coinbub.daemon.niko.TransactionDetail;
 public class NormalizedNiko implements Normalized<Niko> {
     private final Niko client;
 
+    @Override
+    public String getSymbol() {
+        return Niko.SYMBOL;
+    }
+
     public NormalizedNiko(final Niko client) {
         this.client = client;
     }

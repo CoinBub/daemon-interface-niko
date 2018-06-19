@@ -74,6 +74,7 @@ import java.util.List;
  * verifymessage <NIKOaddress> <signature> <message>
  */
 public interface Niko {
+    public static final String SYMBOL = "NIKO";
     /**
      * `getnewaddress [account]`
      * 
