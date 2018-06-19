@@ -7,7 +7,7 @@
         <version>1.1.0</version>
     </parent>
     <artifactId>daemon-interface-niko</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Daemon :: Niko</name>
